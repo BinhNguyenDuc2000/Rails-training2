@@ -33,7 +33,11 @@
 
 <h2>Review list</h2>
 <% @book.book_review.each do |book_review|%>
-    <p class="card-text"><%= book_review.review %></p>
+<ul>
+    <li><%= book_review.review %>
+        &#40;<i><%= book_review.user.name %>&#41;</i>
+    </li>
+</ul>
 <% end %>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
